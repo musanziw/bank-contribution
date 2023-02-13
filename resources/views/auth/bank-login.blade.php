@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-form.auth-card :title="__('Se connecter')">
+    <x-form.auth-card :title="__('Se connecter en tant qu\'Admin')">
         @if($errors->any())
             @foreach($errors->all() as $error)
                 <app-toast type="error" message="{{ $error }}"></app-toast>
@@ -18,10 +18,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="form-label-group">
+                <div class="form-label">
                     <x-input-label for="password" :value="__('Mot de passe')"/>
-                    <a class="link link-primary link-sm" href="{{ route('password.request') }}">
-                        Mot de passe oublié ?</a>
                 </div>
                 <div class="form-control-wrap">
                     <x-text-input type="password" name="password"
