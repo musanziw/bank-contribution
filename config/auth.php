@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'bank' => [
+            'driver' => 'session',
+            'provider' => 'banks'
+        ],
     ],
 
     /*
@@ -62,13 +66,13 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\User::class
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'banks' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Bank::class
+        ],
     ],
 
     /*
@@ -89,6 +93,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'banks' => [
+            'provider' => 'banks',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
