@@ -1,7 +1,10 @@
 import './bootstrap';
+import '@hotwired/turbo'
+import 'bootstrap-datepicker'
+import Toast from "./elements/toast";
 
-import Alpine from 'alpinejs';
+customElements.define('app-toast', Toast)
 
-window.Alpine = Alpine;
-
-Alpine.start();
+document.addEventListener("turbo:load", function () {
+    $('.select2-input').select2();
+});
