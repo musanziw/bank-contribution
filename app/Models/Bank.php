@@ -12,6 +12,11 @@ class Bank extends Authenticatable
 
     protected string $guard = 'bank';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
+     */
     protected $fillable = [
         'name',
         'email',

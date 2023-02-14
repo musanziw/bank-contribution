@@ -43,6 +43,9 @@
                             Libellé
                         </th>
                         <th class="tb-odr-info">
+                            Date de creation
+                        </th>
+                        <th class="tb-odr-info">
                             <span class="tb-odr-id">Actions</span>
                         </th>
                     </tr>
@@ -55,6 +58,9 @@
                             </td>
                             <td class="tb-odr-info">
                                 <span class="tb-odr-id">{{ $town->name }}</span>
+                            </td>
+                            <td class="tb-odr-info">
+                                <span class="tb-odr-id">{{ $town->created_at->diffForHumans() }}</span>
                             </td>
                             <td class="tb-odr-info">
                                 <a href="{{ route('town.edit', ['town' => $town]) }}"

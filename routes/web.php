@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Town\TownController;
@@ -27,12 +28,21 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth:bank')->group(function () {
     Route::get('bank/dashboard', [DashboardController::class, 'bank'])->name('bank.dashboard');
     // Towns routes
-    Route::get('towns', [TownController::class, 'index'])->name('town.index');
-    Route::get('town/create', [TownController::class, 'create'])->name('town.create');
-    Route::post('town/create', [TownController::class, 'store']);
-    Route::get('town/{town}', [TownController::class, 'edit'])->name('town.edit');
-    Route::post('town/{town}', [TownController::class, 'update']);
-    Route::delete('town/{town}', [TownController::class, 'destroy'])->name('town.destroy');
+    Route::get('bank/towns', [TownController::class, 'index'])->name('town.index');
+    Route::get('bank/town/create', [TownController::class, 'create'])->name('town.create');
+    Route::post('bank/town/create', [TownController::class, 'store']);
+    Route::get('bank/town/{town}', [TownController::class, 'edit'])->name('town.edit');
+    Route::post('bank/town/{town}', [TownController::class, 'update']);
+    Route::delete('bank/town/{town}', [TownController::class, 'destroy'])->name('town.destroy');
+
+    // Agency routes
+    Route::get('bank/agencies', [AgencyController::class, 'index'])->name('agency.index');
+    Route::get('bank/agency/create', [AgencyController::class, 'create'])->name('agency.create');
+    Route::post('bank/agency/create', [AgencyController::class, 'store']);
+    Route::get('bank/agency/{agency}', [AgencyController::class, 'edit'])->name('agency.edit');
+    Route::post('bank/agency/{agency}', [AgencyController::class, 'update']);
+    Route::delete('bank/agency/{agency}', [AgencyController::class, 'destroy'])->name('agency.destroy');
+
 });
 
 require __DIR__ . '/auth.php';

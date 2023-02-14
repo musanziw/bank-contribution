@@ -1,80 +1,79 @@
 <x-app-bank-layout>
-    @if(session('success') === 'town-created')
-        <app-toast type="success" message="La ville a bien été créé."></app-toast>
+    @if(session('success') === 'agency-created')
+        <app-toast type="success" message="L'agence a bien été créé."></app-toast>
     @endif
-    @if(session('success') === 'town-updated')
-        <app-toast type="success" message="La ville a bien été mofifié."></app-toast>
+    @if(session('success') === 'agency-updated')
+        <app-toast type="success" message="L'agence a bien été mofifié."></app-toast>
     @endif
-    @if(session('success') === 'town-deleted')
-        <app-toast type="success" message="La ville a bien été supprimé."></app-toast>
+    @if(session('success') === 'agency-deleted')
+        <app-toast type="success" message="L'agence a bien été supprimé."></app-toast>
     @endif
-    <div class="nk-content-body">
-        <div class="nk-block-head">
-            <div class="nk-block-between g-3">
-                <div class="nk-block-head-content">
-                    <h3 class="nk-block-title page-title">Villes</h3>
-                    <div class="nk-block-des text-soft">
-                        <p>Il y a {{ $towns->total() }} villes.</p>
+    <div class="nk-block-head">
+        <div class="nk-block-between g-3">
+            <div class="nk-block-head-content">
+                <h3 class="nk-block-title page-title">Agences</h3>
+                <div class="nk-block-des text-soft">
+                    <p>Il y a {{ $agencies->total() }} agences.</p>
+                </div>
+            </div>
+            <div class="nk-block-head-content">
+                <div class="toggle-wrap nk-block-tools-toggle">
+                    <div class="toggle-expand-content">
+                        <ul class="justify-between g-3">
+                            <li>
+                                <a href="{{ route('agency.create') }}" class="btn text-white bg-primary"><em
+                                        class="icon ni ni-plus"></em><span>Ajouter une agence</span></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="nk-block-head-content">
-                    <div class="toggle-wrap nk-block-tools-toggle">
-                        <div class="toggle-expand-content">
-                            <ul class="justify-between g-3">
+            </div>
+        </div>
+    </div>
+    @if($agencies->count() > 0)
+        <div class="row g-gs">
+            @foreach($agencies as $agency)
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="card h-100">
+                        <div class="card-inner">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <a href="{{ route('agency.edit', ['agency' => $agency]) }}"
+                                   class="d-flex align-items-center">
+                                    <div class="ms-3">
+                                        <h6 class="title mb-1">{{ $agency->name }}</h6>
+                                        <span class="sub-text">4 Clients</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <p>
+                                Manager : {{ $agency->agency_manager_name }} <br/>
+                                Mobile: {{ $agency->mobile }}
+                                <br/>
+                                E-mail: {{ $agency->email }}
+                            </p>
+                            <ul class="d-flex flex-wrap g-1">
+                                <li><span class="badge badge-dim bg-primary">{{ $agency->town->name }}</span></li>
                                 <li>
-                                    <a href="{{ route('town.create') }}" class="btn text-white bg-primary"><em
-                                            class="icon ni ni-plus"></em><span>Ajouter une ville</span></a>
+                                    <span
+                                        class="badge badge-dim bg-warning">{{ $agency->created_at->diffForHumans() }}</span>
                                 </li>
                             </ul>
+
+                            <a href="{{ route('agency.edit', ['agency' => $agency ]) }}"
+                               class="btn btn-block btn-dim btn-success mt-4"><span>Editer l'agance</span></a>
+                            <form method="post" action="{{ route('agency.destroy', ['agency' => $agency]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-block btn-dim btn-danger mt-2"><span>Supprimer l'agance</span>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-        @if($towns->count() > 0)
-            <div class="card card-bordered card-preview">
-                <table class="table table-orders">
-                    <thead class="tb-odr-head">
-                    <tr class="tb-odr-item">
-                        <th class="tb-odr-info">
-                            #
-                        </th>
-                        <th class="tb-odr-info">
-                            Libellé
-                        </th>
-                        <th class="tb-odr-info">
-                            <span class="tb-odr-id">Actions</span>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody class="tb-odr-body">
-                    @foreach($towns as $town)
-                        <tr class="tb-odr-item">
-                            <td class="tb-odr-info">
-                                <span class="tb-odr-id">{{ $town->id }}</span>
-                            </td>
-                            <td class="tb-odr-info">
-                                <span class="tb-odr-id">{{ $town->name }}</span>
-                            </td>
-                            <td class="tb-odr-info">
-                                <a href="{{ route('town.edit', ['town' => $town]) }}"
-                                   class="btn btn-primary">Edition</a>
-                                <form action="{{ route('town.destroy', ['town' => $town]) }}"
-                                      method="post"
-                                      style="display: inline-block" onclick="return confirm('Confirmez avant de supprimer ?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Supprimer</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-        @endif
         <div class="card-inner">
-            {{ $towns->links() }}
+            {{ $agencies->links() }}
         </div>
-    </div>
+    @endif
 </x-app-bank-layout>

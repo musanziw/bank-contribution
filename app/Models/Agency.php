@@ -10,25 +10,19 @@ class Agency extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'agency_manager_name',
-        'mobile',
-        'bank_id',
-        'town_id'
-    ];
+    protected $guarded = [];
 
-    public function bank(): belongsTo
-    {
-        return $this->belongsTo(Bank::class);
-    }
-
+    /**
+     *  Get the town that owns the Agency
+     */
     public function town(): belongsTo
     {
         return $this->belongsTo(Town::class);
     }
 
+    /**
+     *  Get the user that owns the Agency
+     */
     public function users(): belongsTo
     {
         return $this->belongsTo(User::class);

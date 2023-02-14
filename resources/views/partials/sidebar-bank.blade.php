@@ -20,15 +20,15 @@
                                             </a>
                                         </li>
 
-                                        <li class="nk-menu-item  @if(request()->is('towns') || request()->is('towns**') || request()->is('town**')) active @endif">
+                                        <li class="nk-menu-item  @if(request()->is('bank/towns') || request()->is('bank/towns**') || request()->is('bank/town**')) active @endif">
                                             <a href="{{ route('town.index') }}" class="nk-menu-link"
                                                data-bs-original-title="" title="">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-list-index-fill"></em></span>
                                                 <span class="nk-menu-text">Villes</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item  @if(request()->is('tasks') || request()->is('task**')) active @endif">
-                                            <a href="" class="nk-menu-link">
+                                        <li class="nk-menu-item  @if(request()->is('bank/agencies') || request()->is('bank/agency**') || request()->is('bank/agencies**')) active @endif">
+                                            <a href="{{ route('agency.index') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em
                                                         class="icon ni ni-task-fill-c"></em></span>
                                                 <span class="nk-menu-text">Agences</span>
