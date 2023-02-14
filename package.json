@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "db:fresh": "php artisan migrate:reset && php artisan migrate && php artisan db:seed",
+        "db:fresh": "php artisan migrate:fresh --seed",
         "build": "vite build"
     },
     "devDependencies": {
