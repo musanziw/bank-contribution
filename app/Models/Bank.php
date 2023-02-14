@@ -43,12 +43,12 @@ class Bank extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function agencies(): hasMany
+    public function agencies(): HasMany
     {
         return $this->hasMany(Agency::class);
     }
 
-    public function subscriptions(): hasMany
+    public function subscriptions(): HasMany
     {
         return $this->hasMany(Subscription::class);
     }
