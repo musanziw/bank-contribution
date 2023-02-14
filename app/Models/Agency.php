@@ -24,7 +24,7 @@ class Agency extends Model
     /**
      *  Get the town that owns the Agency
      */
-    public function town(): belongsTo
+    public function town(): BelongsTo
     {
         return $this->belongsTo(Town::class);
     }
@@ -32,7 +32,7 @@ class Agency extends Model
     /**
      *  Get the user that owns the Agency
      */
-    public function users(): belongsTo
+    public function users(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

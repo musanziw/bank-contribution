@@ -21,6 +21,6 @@ class Town extends Model
      */
     public function agencies(): HasMany
     {
-        return $this->HasMany(Agency::class);
+        return $this->hasMany(Agency::class);
     }
 }
