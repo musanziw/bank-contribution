@@ -3,35 +3,24 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Str;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class BankFactory extends Factory
 {
     public function definition(): array
     {
         return [
-            'name' => fake('fr_FR')->name,
-            'email' => fake('fr_FR')->unique()->safeEmail,
-            'username' => fake('fr_FR')->unique()->userName,
-            'mobile' => fake('fr_FR')->unique()->phoneNumber,
-            'address' => fake('fr_FR')->address,
-            'representative_name' => fake('fr_FR')->name,
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10)
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
+            'username' => $this->faker->userName(),
+            'representative_name' => $this->faker->name(),
+            'password' => bcrypt('password'),
+            'remember_token' => Str::random(10),
+            'created_at' => $this->faker->dateTimeBetween('-1 years', 'now'),
+            'updated_at' => Carbon::now(),
         ];
     }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return static
-     */
-    public function unverified(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
-    }
-
 }

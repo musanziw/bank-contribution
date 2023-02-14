@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Str;
 
 class AgencyFactory extends Factory
 {
@@ -11,9 +12,8 @@ class AgencyFactory extends Factory
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'agency_manager_name' => $this->faker->name,
-            'mobile' => $this->faker->phoneNumber,
-            'town_id' => $this->faker->numberBetween(1, 10),
+            'phone' => $this->faker->phoneNumber,
+            'manager_name' => $this->faker->name,
         ];
     }
 }

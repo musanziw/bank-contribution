@@ -46,8 +46,8 @@
                                 </a>
                             </div>
                             <p>
-                                Manager : {{ $agency->agency_manager_name }} <br/>
-                                Mobile: {{ $agency->mobile }}
+                                Manager : {{ $agency->manager_name }} <br/>
+                                Mobile: {{ $agency->phone }}
                                 <br/>
                                 E-mail: {{ $agency->email }}
                             </p>

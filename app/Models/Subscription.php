@@ -10,20 +10,9 @@ class Subscription extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'bank_id',
-        'started_at',
-        'ended_at',
-        'status'
-    ];
+    protected $guarded = [];
 
-    protected $casts = [
-        'started_at' => 'datetime',
-        'ended_at' => 'datetime',
-        'status' => 'boolean'
-    ];
-
-    public function bank(): belongsTo
+    public function bank(): BelongsTo
     {
         return $this->belongsTo(Bank::class);
     }

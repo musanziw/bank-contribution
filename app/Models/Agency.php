@@ -12,20 +12,9 @@ class Agency extends Model
 
     protected $guarded = [];
 
-    /**
-     *  Get the town that owns the Agency
-     */
-    public function town(): belongsTo
+    public function town(): BelongsTo
     {
         return $this->belongsTo(Town::class);
-    }
-
-    /**
-     *  Get the user that owns the Agency
-     */
-    public function users(): belongsTo
-    {
-        return $this->belongsTo(User::class);
     }
 
 }
