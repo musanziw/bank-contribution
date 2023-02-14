@@ -12,7 +12,14 @@ class Town extends Model
 
     protected $guarded = [];
 
-    public function agencies(): hasMany
+    protected $fillable = [
+            'name',
+    ];
+    /**
+     *  Get the agencies for the Town
+     *
+     */
+    public function agencies(): HasMany
     {
         return $this->hasMany(Agency::class);
     }

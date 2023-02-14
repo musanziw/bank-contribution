@@ -12,9 +12,29 @@ class Agency extends Model
 
     protected $guarded = [];
 
+    // Tu dois toujours ajouter des fillabes
+    protected $fillable = [
+            'name',
+            'email',
+            'agency_manager_name',
+            'mobile',
+            'town_id',
+        ];
+
+    /**
+     *  Get the town that owns the Agency
+     */
     public function town(): BelongsTo
     {
         return $this->belongsTo(Town::class);
+    }
+
+    /**
+     *  Get the user that owns the Agency
+     */
+    public function users(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
 }
