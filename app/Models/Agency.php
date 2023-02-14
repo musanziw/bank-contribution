@@ -12,6 +12,15 @@ class Agency extends Model
 
     protected $guarded = [];
 
+    // Tu dois toujours ajouter des fillabes
+    protected $fillable = [
+            'name',
+            'email',
+            'agency_manager_name',
+            'mobile',
+            'town_id',
+        ];
+
     /**
      *  Get the town that owns the Agency
      */
