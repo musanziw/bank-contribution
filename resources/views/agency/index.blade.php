@@ -33,7 +33,7 @@
     @if($agencies->count() > 0)
         <div class="row g-gs">
             @foreach($agencies as $agency)
-                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                <div class="col-sm-3 col-lg-4 col-xxl-3">
                     <div class="card h-100">
                         <div class="card-inner">
                             <div class="d-flex justify-content-between align-items-start mb-3">
@@ -52,15 +52,15 @@
                                 E-mail: {{ $agency->email }}
                             </p>
                             <ul class="d-flex flex-wrap g-1">
-                                <li><span class="badge badge-dim bg-primary">{{ $agency->town->name }}</span></li>
                                 <li>
-                                    <span
-                                        class="badge badge-dim bg-warning">{{ $agency->created_at->diffForHumans() }}</span>
+                                    <span class="badge badge-dim bg-success">{{ $agency->town->name }}</span>
+                                </li>
+                                <li>
+                                    <span class="badge badge-dim bg-warning">{{ $agency->created_at->diffForHumans() }}</span>
                                 </li>
                             </ul>
-
                             <a href="{{ route('agency.edit', ['agency' => $agency ]) }}"
-                               class="btn btn-block btn-dim btn-success mt-4"><span>Editer l'agance</span></a>
+                               class="btn btn-block btn-dim btn-primary mt-4"><span>Editer l'agance</span></a>
                             <form method="post" action="{{ route('agency.destroy', ['agency' => $agency]) }}">
                                 @csrf
                                 @method('DELETE')

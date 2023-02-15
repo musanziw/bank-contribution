@@ -30,21 +30,21 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <x-input-label for="agency_manager_name" :value="__('Nom du manager')"/>
+                                <x-input-label for="manager_name" :value="__('Nom du manager')"/>
                                 <div class="form-control-wrap">
-                                    <x-text-input name="agency_manager_name" type="text"
+                                    <x-text-input name="manager_name" type="text"
                                                   placeholder="Le nom du manager"
-                                                  :value="old('agency_manager_name', $agency->agency_manager_name)"/>
+                                                  :value="old('manager_name', $agency->manager_name)"/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <x-input-label for="mobile" :value="__('Mobile')"/>
+                                <x-input-label for="phone" :value="__('Mobile')"/>
                                 <div class="form-control-wrap">
-                                    <x-text-input name="mobile" type="text"
+                                    <x-text-input name="phone" type="text"
                                                   placeholder="Le numéro de l'agence"
-                                                  :value="old('mobile', $agency->mobile)"/>
+                                                  :value="old('phone', $agency->phone)"/>
                                 </div>
                             </div>
                         </div>

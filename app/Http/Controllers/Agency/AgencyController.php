@@ -13,7 +13,7 @@ class AgencyController extends Controller
 {
     public function index()
     {
-        $agencies = Agency::paginate(6);
+        $agencies = Agency::paginate(12);
         return view('agency.index', [
             'agencies' => $agencies
         ]);
@@ -60,15 +60,15 @@ class AgencyController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'agency_manager_name' => 'required',
-            'mobile' => 'required',
+            'manager_name' => 'required',
+            'phone' => 'required',
             'town_id' => 'required',
         ]);
         $agency->update([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'agency_manager_name' => $request->get('agency_manager_name'),
-            'mobile' => $request->get('mobile'),
+            'manager_name' => $request->get('manager_name'),
+            'phone' => $request->get('mobile'),
             'town_id' => $request->get('town_id')
         ]);
         return redirect()->route('agency.index')->with('success', 'agency-updated');

@@ -15,9 +15,9 @@ class Town extends Model
     protected $fillable = [
             'name',
     ];
+
     /**
      *  Get the agencies for the Town
-     *
      */
     public function agencies(): HasMany
     {

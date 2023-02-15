@@ -10,7 +10,7 @@
                                     <div class="user-status">
                                         Bank Admin
                                     </div>
-                                    <div class="user-name">{{ Auth::guard('bank')->user()->username }}</div>
+                                    <div class="user-name">{{ Auth::user()->username }}</div>
                                 </div>
                             </div>
                         </a>
@@ -19,7 +19,7 @@
                         <form action="{{ route('bank.logout') }}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-success btn-dim">
-                                Sign out
+                                Se déconnecter
                             </button>
                         </form>
                     </li>
