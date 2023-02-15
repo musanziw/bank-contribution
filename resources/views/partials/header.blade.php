@@ -8,9 +8,7 @@
                             <div class="user-toggle">
                                 <div class="user-info d-none d-md-block">
                                     <div class="user-status">
-                                        @foreach (Auth::user()->roles as $role)
-                                             / {{ $role->name }}
-                                        @endforeach
+                                        {{ Auth::user()->role->name }}
                                     </div>
                                     <div class="user-name">{{ Auth::user()->username }}</div>
                                 </div>
@@ -21,7 +19,7 @@
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-success btn-dim">
-                                Sign out
+                                Se déconnecter
                             </button>
                         </form>
                     </li>

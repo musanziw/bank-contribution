@@ -24,14 +24,7 @@
                                             <a href="" class="nk-menu-link"
                                                data-bs-original-title="" title="">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-list-index-fill"></em></span>
-                                                <span class="nk-menu-text">Villes</span>
-                                            </a>
-                                        </li>
-                                        <li class="nk-menu-item  @if(request()->is('tasks') || request()->is('task**')) active @endif">
-                                            <a href="" class="nk-menu-link">
-                                                <span class="nk-menu-icon"><em
-                                                        class="icon ni ni-task-fill-c"></em></span>
-                                                <span class="nk-menu-text">Agences</span>
+                                                <span class="nk-menu-text">Clients</span>
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
@@ -39,23 +32,9 @@
                                                data-bs-original-title="" title="">
                                                 <span class="nk-menu-icon"><em
                                                         class="icon ni ni-user-add"></em></span>
-                                                <span class="nk-menu-text">Utilisateurs</span>
+                                                <span class="nk-menu-text">Cotisations</span>
                                             </a>
                                         </li>
-{{--                                        <li class="nk-menu-item">--}}
-{{--                                            <a href="{{ route('permission.index') }}" class="nk-menu-link"--}}
-{{--                                               data-bs-original-title="" title="">--}}
-{{--                                                <span class="nk-menu-icon"><em class="icon ni ni-invest"></em></span>--}}
-{{--                                                <span class="nk-menu-text">Permissions</span>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="nk-menu-item">--}}
-{{--                                            <a href="{{ route('role.index') }}" class="nk-menu-link"--}}
-{{--                                               data-bs-original-title="" title="">--}}
-{{--                                                <span class="nk-menu-icon"><em class="icon ni ni-notice"></em></span>--}}
-{{--                                                <span class="nk-menu-text">Roles</span>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
                                         <li class="nk-menu-item  @if(request()->is('profile**')) active @endif">
                                             <a href="" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>

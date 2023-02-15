@@ -10,11 +10,11 @@
                     <div class="row gy-4">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <x-input-label for="name" :value="__('Nom de l\'agence')"/>
+                                <x-input-label for="name" :value="__('Nom de l\'agent')"/>
                                 <div class="form-control-wrap">
                                     <x-text-input name="name" type="text"
                                                   placeholder="Le nom de l'agence"
-                                                  :value="old('name', $agency->name)"/>
+                                                  :value="old('name', $user->name)"/>
                                 </div>
                             </div>
                         </div>
@@ -22,19 +22,19 @@
                             <div class="form-group">
                                 <x-input-label for="email" :value="__('E-mail')"/>
                                 <div class="form-control-wrap">
-                                    <x-text-input  name="email" type="email"
-                                                   placeholder="Entrez l'email de l'agence"
-                                                   :value="old('email', $agency->email)"/>
+                                    <x-text-input name="email" type="email"
+                                                  placeholder="Entrez l'email de l'agence"
+                                                  :value="old('email', $user->email)"/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <x-input-label for="manager_name" :value="__('Nom du manager')"/>
+                                <x-input-label for="username" :value="__('Nom utilisateur')"/>
                                 <div class="form-control-wrap">
-                                    <x-text-input name="manager_name" type="text"
-                                                  placeholder="Le nom du manager"
-                                                  :value="old('manager_name', $agency->manager_name)"/>
+                                    <x-text-input name="username" type="text"
+                                                  placeholder="Le nom utilisateur"
+                                                  :value="old('username', $user->username)"/>
                                 </div>
                             </div>
                         </div>
@@ -44,26 +44,59 @@
                                 <div class="form-control-wrap">
                                     <x-text-input name="phone" type="text"
                                                   placeholder="Le numéro de l'agence"
-                                                  :value="old('phone', $agency->phone)"/>
+                                                  :value="old('phone', $user->phone)"/>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label" for="town_id">Ville</label>
-                                <select class="form-select select2-input" data-search="off" name="town_id"
-                                        id="town_id"
-                                        data-placeholder="Choisir la ville">
+                                <x-input-label for="address" :value="__('Addrese')"/>
+                                <div class="form-control-wrap">
+                                    <x-text-input name="address" type="text"
+                                                  placeholder="L'adresse"
+                                                  :value="old('address', $user->address)"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-label" for="agence">Agence</label>
+                                <select class="form-select select2-input" data-search="off" name="agence"
+                                        id="agence"
+                                        data-placeholder="Affecter a une agence">
                                     <option value=""></option>
-                                    @foreach($towns as $town)
-                                        <option value="{{ $town->id }}" @if($town->id == $agency->town_id) selected @endif>{{ $town->name }}</option>
+                                    @foreach($agencies as $agency)
+                                        <option value="{{ $agency->id }}"
+                                                @if($agency->id == $user->agency_id) selected @endif>{{ $agency->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
-
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-label" for="role">Agence</label>
+                                <select class="form-select select2-input" data-search="off" name="role"
+                                        id="role"
+                                        data-placeholder="Affecter a un role">
+                                    <option value=""></option>
+                                    @foreach($roles as $role)
+                                        <option value="{{ $role->id }}"
+                                                @if($role->id == $user->role_id) selected @endif>{{ $role->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" @if($user->status) checked
+                                           @endif name="status" id="status">
+                                    <label class="custom-control-label" for="status">Inactif / Actif</label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <button class="btn btn-success">Enregistrer l'agence</button>
+                            <button class="btn btn-success">Mettre à jour l'agent</button>
                         </div>
                     </div>
                 </form>

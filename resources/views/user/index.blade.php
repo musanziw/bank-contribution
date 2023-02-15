@@ -59,7 +59,7 @@
                                     <li><span>Email</span><span>{{ $user->email }}</span></li>
                                 </ul>
                                 <div class="team-view">
-                                    <a href="" class="btn btn-block btn-dim btn-primary"><span>Editer l'agent</span></a>
+                                    <a href="{{ route('user.edit', ['user' => $user]) }}" class="btn btn-block btn-dim btn-primary"><span>Editer l'agent</span></a>
                                 </div>
                             </div>
                         </div>
