@@ -34,28 +34,13 @@
                                                 <span class="nk-menu-text">Agences</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item">
-                                            <a href="" class="nk-menu-link"
-                                               data-bs-original-title="" title="">
+                                        <li class="nk-menu-item @if(request()->is('bank/users') || request()->is('bank/user**') || request()->is('bank/users**')) active @endif">
+                                            <a href="{{ route('user.index') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em
                                                         class="icon ni ni-user-add"></em></span>
                                                 <span class="nk-menu-text">Utilisateurs</span>
                                             </a>
                                         </li>
-{{--                                        <li class="nk-menu-item">--}}
-{{--                                            <a href="{{ route('permission.index') }}" class="nk-menu-link"--}}
-{{--                                               data-bs-original-title="" title="">--}}
-{{--                                                <span class="nk-menu-icon"><em class="icon ni ni-invest"></em></span>--}}
-{{--                                                <span class="nk-menu-text">Permissions</span>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="nk-menu-item">--}}
-{{--                                            <a href="{{ route('role.index') }}" class="nk-menu-link"--}}
-{{--                                               data-bs-original-title="" title="">--}}
-{{--                                                <span class="nk-menu-icon"><em class="icon ni ni-notice"></em></span>--}}
-{{--                                                <span class="nk-menu-text">Roles</span>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
                                         <li class="nk-menu-item  @if(request()->is('profile**')) active @endif">
                                             <a href="" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>

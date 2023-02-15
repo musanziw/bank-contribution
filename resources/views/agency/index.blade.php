@@ -64,7 +64,7 @@
                             <form method="post" action="{{ route('agency.destroy', ['agency' => $agency]) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-block btn-dim btn-danger mt-2"><span>Supprimer l'agance</span>
+                                <button type="submit" class="btn btn-block btn-dim btn-danger mt-2" onclick="return confirm('Confirmez avant de supprimer ?')"><span>Supprimer l'agance</span>
                                 </button>
                             </form>
                         </div>

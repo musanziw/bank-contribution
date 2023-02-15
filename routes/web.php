@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Town\TownController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,15 @@ Route::middleware('auth:bank')->group(function () {
     Route::get('bank/agency/{agency}', [AgencyController::class, 'edit'])->name('agency.edit');
     Route::post('bank/agency/{agency}', [AgencyController::class, 'update']);
     Route::delete('bank/agency/{agency}', [AgencyController::class, 'destroy'])->name('agency.destroy');
+
+    // User routes
+
+    Route::get('bank/users', [UserController::class, 'index'])->name('user.index');
+    Route::get('bank/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('bank/user/create', [UserController::class, 'store']);
+    Route::get('bank/user/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('bank/user/{user}', [UserController::class, 'update']);
+    Route::delete('bank/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 
 });
 

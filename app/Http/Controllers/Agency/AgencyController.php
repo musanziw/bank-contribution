@@ -68,7 +68,7 @@ class AgencyController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'manager_name' => $request->get('manager_name'),
-            'phone' => $request->get('mobile'),
+            'phone' => $request->get('phone'),
             'town_id' => $request->get('town_id')
         ]);
         return redirect()->route('agency.index')->with('success', 'agency-updated');

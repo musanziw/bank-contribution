@@ -52,6 +52,7 @@ class TownController extends Controller
 
     public function destroy(Town $town)
     {
+        $town->agencies()->delete();
         $town->delete();
         return redirect()->route('town.index')->with('success', 'town-deleted');
     }
