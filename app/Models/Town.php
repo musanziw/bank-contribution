@@ -12,10 +12,6 @@ class Town extends Model
 
     protected $guarded = [];
 
-    protected $fillable = [
-            'name',
-    ];
-
     /**
      *  Get the agencies for the Town
      */
