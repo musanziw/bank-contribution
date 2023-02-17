@@ -21,7 +21,7 @@ class Bank extends Authenticatable
         'name',
         'email',
         'username',
-        'mobile',
+        'phone',
         'address',
         'representative_name',
         'password',
