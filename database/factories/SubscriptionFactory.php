@@ -11,7 +11,7 @@ class SubscriptionFactory extends Factory
     {
         return [
             'started_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
-            'ended_at' => $this->faker->dateTimeBetween('noe', '+1 year'),
+            'ended_at' => $this->faker->dateTimeBetween('now', '+1 year'),
             'status' => $this->faker->boolean()
         ];
     }

@@ -11,6 +11,7 @@ class TownFactory extends Factory
     {
         return [
             'name' => $this->faker->city(),
+            'created_at' => fake()->dateTimeBetween('-1 years', 'now'),
         ];
     }
 }

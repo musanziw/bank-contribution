@@ -27,6 +27,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'role_id' => rand(1, 2),
             'agency_id' => rand(1, 20),
+            'created_at' => fake()->dateTimeBetween('-1 years', 'now'),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ];

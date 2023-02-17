@@ -14,6 +14,7 @@ class AgencyFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,
             'manager_name' => $this->faker->name,
+            'created_at' => $this->faker->dateTimeBetween('-1 years', 'now'),
         ];
     }
 }
