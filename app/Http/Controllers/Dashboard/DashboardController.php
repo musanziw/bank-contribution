@@ -9,11 +9,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        return view('dashboard.cashier');
     }
 
     public function bank()
     {
-        return view('dashboard.bank-index');
+        return view('dashboard.bank');
     }
 }

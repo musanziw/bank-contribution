@@ -1,4 +1,4 @@
-<x-app-bank-layout>
+<x-bank-layout>
     @if($errors->any())
         <app-toast type="error" message="{{ $errors->first() }}"></app-toast>
     @endif
@@ -70,4 +70,4 @@
             </div>
         </div>
     </div>
-</x-app-bank-layout>
+</x-bank-layout>

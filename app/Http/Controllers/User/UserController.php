@@ -50,7 +50,7 @@ class UserController extends Controller
             'address' => $request->get('address'),
             'role_id' => $request->get('role'),
             'agency_id' => $request->get('agence'),
-            'status' => $request->get('status'),
+            'status' => (bool)$request->get('status'),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ]);

@@ -1,4 +1,4 @@
-<x-app-bank-layout>
+<x-bank-layout>
     @if(session('success') === 'town-created')
         <app-toast type="success" message="La ville a bien été créé."></app-toast>
     @endif
@@ -83,4 +83,4 @@
             {{ $towns->links() }}
         </div>
     </div>
-</x-app-bank-layout>
+</x-bank-layout>

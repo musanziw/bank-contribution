@@ -1,4 +1,4 @@
-<x-app-bank-layout>
+<x-bank-layout>
     @if(session('success') === 'user-created')
         <app-toast type="success" message="L'agent a bien été créé."></app-toast>
     @endif
@@ -38,7 +38,7 @@
                         <div class="card-inner">
                             <div class="team">
                                 <div class="user-card user-card-s2">
-                                    <div class="user-avatar lg bg-primary">
+                                    <div class="user-avatar lg @if($user->status) bg-success @else bg-danger @endif">
                                         <span>{{ $user->name[0] }}</span>
                                         <div
                                             class="status dot dot-lg @if($user->status) dot-success @else dot-danger @endif"></div>
@@ -71,4 +71,4 @@
             {{ $users->links() }}
         </div>
     @endif
-</x-app-bank-layout>
+</x-bank-layout>

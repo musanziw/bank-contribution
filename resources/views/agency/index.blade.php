@@ -1,4 +1,4 @@
-<x-app-bank-layout>
+<x-bank-layout>
     @if(session('success') === 'agency-created')
         <app-toast type="success" message="L'agence a bien été créé."></app-toast>
     @endif
@@ -76,4 +76,4 @@
             {{ $agencies->links() }}
         </div>
     @endif
-</x-app-bank-layout>
+</x-bank-layout>
