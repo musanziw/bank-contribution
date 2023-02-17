@@ -19,9 +19,8 @@
                                                 <span class="nk-menu-text">Dashboard</span>
                                             </a>
                                         </li>
-
-                                        <li class="nk-menu-item  @if(request()->is('departments') || request()->is('department**')) active @endif">
-                                            <a href="" class="nk-menu-link"
+                                        <li class="nk-menu-item  @if(request()->is('clients') || request()->is('client**')) active @endif">
+                                            <a href="{{ route('client.index') }}" class="nk-menu-link"
                                                data-bs-original-title="" title="">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-list-index-fill"></em></span>
                                                 <span class="nk-menu-text">Clients</span>

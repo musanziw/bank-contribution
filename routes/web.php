@@ -3,6 +3,7 @@
 use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\Bank\BankPassword;
 use App\Http\Controllers\Bank\BankProfile;
+use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Town\TownController;
 use App\Http\Controllers\User\ProfileController;
@@ -22,6 +23,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
+    // Client routes
+    Route::get('clients', [ClientController::class, 'index'])->name('client.index');
+    Route::get('client/create', [ClientController::class, 'create'])->name('client.create');
+    Route::post('client/create', [ClientController::class, 'store']);
+    Route::get('client/{client}', [ClientController::class, 'edit'])->name('client.edit');
+    Route::post('client/{client}', [ClientController::class, 'update']);
+
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
