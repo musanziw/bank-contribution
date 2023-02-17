@@ -41,7 +41,7 @@
                                    class="d-flex align-items-center">
                                     <div class="ms-3">
                                         <h6 class="title mb-1">{{ $agency->name }}</h6>
-                                        <span class="sub-text">4 Clients</span>
+                                        <span class="sub-text">{{ $agency->users->count() }} Agents</span>
                                     </div>
                                 </a>
                             </div>
