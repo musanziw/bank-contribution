@@ -4,7 +4,7 @@
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
                     <li class="dropdown user-dropdown">
-                        <a href="{{ route('profile.edit') }}">
+                        <a href="{{ route('bank.profile') }}">
                             <div class="user-toggle">
                                 <div class="user-info d-none d-md-block">
                                     <div class="user-status">
