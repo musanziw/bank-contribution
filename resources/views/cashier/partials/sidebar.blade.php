@@ -35,7 +35,7 @@
                                             </a>
                                         </li>
                                         <li class="nk-menu-item  @if(request()->is('profile**')) active @endif">
-                                            <a href="" class="nk-menu-link">
+                                            <a href="{{ route('profile.edit') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
                                                 <span class="nk-menu-text">Profile</span>
                                             </a>
