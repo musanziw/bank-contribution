@@ -16,4 +16,9 @@ class Subscription extends Model
     {
         return $this->belongsTo(Bank::class);
     }
+
+    protected $casts = [
+        'started_at' => 'datetime',
+        'ended_at' => 'datetime',
+    ];
 }
