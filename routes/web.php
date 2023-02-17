@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Agency\AgencyController;
+use App\Http\Controllers\Bank\BankPassword;
+use App\Http\Controllers\Bank\BankProfile;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Town\TownController;
 use App\Http\Controllers\User\ProfileController;
@@ -44,8 +46,12 @@ Route::middleware('auth:bank')->group(function () {
     Route::post('bank/agency/{agency}', [AgencyController::class, 'update']);
     Route::delete('bank/agency/{agency}', [AgencyController::class, 'destroy'])->name('agency.destroy');
 
-    // User routes
+    // Profile routes
+    Route::get('bank/profile', [BankProfile::class, 'edit'])->name('bank.profile');
+    Route::patch('bank/profile', [BankProfile::class, 'update']);
+    Route::put('bank/profile', [BankPassword::class, 'update'])->name('bank.password.update');
 
+    // User routes
     Route::get('bank/users', [UserController::class, 'index'])->name('user.index');
     Route::get('bank/user/create', [UserController::class, 'create'])->name('user.create');
     Route::post('bank/user/create', [UserController::class, 'store']);
