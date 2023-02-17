@@ -20,29 +20,29 @@
                                             </a>
                                         </li>
 
-                                        <li class="nk-menu-item  @if(request()->is('bank/towns') || request()->is('bank/towns**') || request()->is('bank/town**')) active @endif">
+                                        <li class="nk-menu-item  @if(request()->is('bank/towns**') || request()->is('bank/town**')) active @endif">
                                             <a href="{{ route('town.index') }}" class="nk-menu-link"
                                                data-bs-original-title="" title="">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-list-index-fill"></em></span>
                                                 <span class="nk-menu-text">Villes</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item  @if(request()->is('bank/agencies') || request()->is('bank/agency**') || request()->is('bank/agencies**')) active @endif">
+                                        <li class="nk-menu-item  @if(request()->is('bank/agency**') || request()->is('bank/agencies**')) active @endif">
                                             <a href="{{ route('agency.index') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em
                                                         class="icon ni ni-task-fill-c"></em></span>
                                                 <span class="nk-menu-text">Agences</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item @if(request()->is('bank/users') || request()->is('bank/user**') || request()->is('bank/users**')) active @endif">
+                                        <li class="nk-menu-item @if(request()->is('bank/user**') || request()->is('bank/users**')) active @endif">
                                             <a href="{{ route('user.index') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em
                                                         class="icon ni ni-user-add"></em></span>
                                                 <span class="nk-menu-text">Utilisateurs</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item  @if(request()->is('profile**')) active @endif">
-                                            <a href="" class="nk-menu-link">
+                                        <li class="nk-menu-item  @if(request()->is('bank/profile**')) active @endif">
+                                            <a href="{{ route('bank.profile') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
                                                 <span class="nk-menu-text">Profile</span>
                                             </a>
