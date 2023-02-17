@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label" for="role">Agence</label>
+                                <label class="form-label" for="role">Role</label>
                                 <select class="form-select select2-input" data-search="off" name="role"
                                         id="role"
                                         data-placeholder="Affecter a un role">
