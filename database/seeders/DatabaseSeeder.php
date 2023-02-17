@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Bank::factory(1)->create();
+        Bank::factory(1)->has(Subscription::factory(1))->create();
         Role::upsert([
             ['name' => 'Caissier'], ['name' => 'Collecteur']
         ], ['name']);
