@@ -10,9 +10,9 @@
 <body class="nk-body bg-lighter npc-general has-sidebar ">
 <div class="nk-app-root">
     <div class="nk-main">
-        @include('partials.sidebar')
+        @include('cashier.partials.sidebar')
         <div class="nk-wrap">
-            @include('partials.header')
+            @include('cashier.partials.header')
             <div class="nk-content">
                 <div class="container-fluid">
                     <div class="nk-content-inner">
