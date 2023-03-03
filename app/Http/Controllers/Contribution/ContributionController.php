@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Contribution;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contribution;
-use App\Models\Search;
 use App\Models\User;
 use Auth;
 use Carbon\Carbon;
@@ -12,6 +11,7 @@ use Illuminate\Http\Request;
 
 class ContributionController extends Controller
 {
+
     public function index()
     {
 
