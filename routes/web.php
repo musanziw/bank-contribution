@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
 
     // Contributions routes
     Route::get('contributions', [ContributionController::class, 'index'])->name('contribution.index');
+    Route::get('contributions/search', [ContributionController::class, 'search'])->name('contribution.search');
+
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
