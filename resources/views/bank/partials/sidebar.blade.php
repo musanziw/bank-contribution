@@ -37,8 +37,15 @@
                                         <li class="nk-menu-item @if(request()->is('bank/user**') || request()->is('bank/users**')) active @endif">
                                             <a href="{{ route('user.index') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em
-                                                        class="icon ni ni-user-add"></em></span>
+                                                        class="icon ni ni-users"></em></span>
                                                 <span class="nk-menu-text">Utilisateurs</span>
+                                            </a>
+                                        </li>
+                                        <li class="nk-menu-item @if(request()->is('bank/contributions**') || request()->is('bank/contribution**')) active @endif">
+                                            <a href="{{ route('bank.contribution.index') }}" class="nk-menu-link">
+                                                <span class="nk-menu-icon"><em
+                                                        class="icon ni ni-activity"></em></span>
+                                                <span class="nk-menu-text">Cotisations</span>
                                             </a>
                                         </li>
                                         <li class="nk-menu-item  @if(request()->is('bank/profile**')) active @endif">
