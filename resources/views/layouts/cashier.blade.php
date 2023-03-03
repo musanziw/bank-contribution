@@ -6,7 +6,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/css/dashlite.min.css','resources/js/scripts.js','resources/js/bundle.js','resources/js/app.js'])
-    @livewireStyles
 </head>
 <body class="nk-body bg-lighter npc-general has-sidebar ">
 <div class="nk-app-root">
@@ -26,6 +25,5 @@
         </div>
     </div>
 </div>
-@livewireScripts
 </body>
 </html>
