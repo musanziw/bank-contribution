@@ -1,4 +1,4 @@
-<x-cashier-layout>
+<x-agent-layout>
     <div class="nk-content-body">
         <div class="nk-block-head">
             <div class="nk-block-between g-3">
@@ -88,4 +88,4 @@
             <h6>Aucune cotisation.</h6>
         @endif
     </div>
-</x-cashier-layout>
+</x-agent-layout>

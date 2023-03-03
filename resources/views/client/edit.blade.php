@@ -1,4 +1,4 @@
-<x-cashier-layout>
+<x-agent-layout>
     @if($errors->any())
         <app-toast type="error" message="{{ $errors->first() }}"></app-toast>
     @endif
@@ -103,4 +103,4 @@
             </div>
         </div>
     </div>
-</x-cashier-layout>
+</x-agent-layout>

@@ -1,4 +1,4 @@
-<x-cashier-layout>
+<x-agent-layout>
     @if(session('success') === 'client-created')
         <app-toast type="success" message="Le client a bien été créé."></app-toast>
     @endif
@@ -82,4 +82,4 @@
             {{ $clients->links() }}
         </div>
     @endif
-</x-cashier-layout>
+</x-agent-layout>

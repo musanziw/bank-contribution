@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.cashier');
+        return view('dashboard.agent');
     }
 
     public function bank()

@@ -1,4 +1,4 @@
-<x-cashier-layout>
+<x-agent-layout>
     @if(session('status') === 'profile-updated')
         <app-toast type="success" message="Informations mises à jour."></app-toast>
     @endif
@@ -113,4 +113,4 @@
                 </div>
             </div>
         </div>
-</x-cashier-layout>
+</x-agent-layout>
