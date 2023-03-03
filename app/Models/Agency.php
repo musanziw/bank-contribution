@@ -26,4 +26,9 @@ class Agency extends Model
         return $this->hasMany(User::class);
     }
 
+    public function contributions(): HasMany
+    {
+        return $this->hasMany(Contribution::class);
+    }
+
 }
