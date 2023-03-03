@@ -26,8 +26,8 @@
                                                 <span class="nk-menu-text">Clients</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item">
-                                            <a href="" class="nk-menu-link"
+                                        <li class="nk-menu-item @if(request()->is('contributions') || request()->is('contributions**')) active @endif">
+                                            <a href="{{ route('contribution.index') }}" class="nk-menu-link"
                                                data-bs-original-title="" title="">
                                                 <span class="nk-menu-icon"><em
                                                         class="icon ni ni-user-add"></em></span>

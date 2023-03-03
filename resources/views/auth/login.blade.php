@@ -20,8 +20,6 @@
             <div class="form-group">
                 <div class="form-label-group">
                     <x-input-label for="password" :value="__('Mot de passe')"/>
-                    <a class="link link-primary link-sm" href="{{ route('password.request') }}">
-                        Mot de passe oublié ?</a>
                 </div>
                 <div class="form-control-wrap">
                     <x-text-input type="password" name="password"
@@ -38,6 +36,7 @@
                 <x-primary-button class="btn-lg btn-block">
                     {{ __('Login') }}
                 </x-primary-button>
+
             </div>
         </form>
     </x-form.auth-card>

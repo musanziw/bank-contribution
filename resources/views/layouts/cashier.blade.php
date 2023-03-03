@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    @vite(['resources/css/app.css', 'resources/css/dashlite.min.css', 'resources/css/theme.css', 'resources/js/scripts.js','resources/js/bundle.js','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/dashlite.min.css','resources/js/scripts.js','resources/js/bundle.js','resources/js/app.js'])
+    @livewireStyles
 </head>
 <body class="nk-body bg-lighter npc-general has-sidebar ">
 <div class="nk-app-root">
@@ -25,5 +26,6 @@
         </div>
     </div>
 </div>
+@livewireScripts
 </body>
 </html>

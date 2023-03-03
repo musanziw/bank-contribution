@@ -13,7 +13,15 @@
                 <div class="card-inner card-inner-lg">
                     <div class="nk-block-head">
                         <div class="nk-block-head-content">
-                            <h4 class="nk-block-title">{{ $title }}</h4>
+                            <h4 class="nk-block-title">{{ $title }} / <span>
+                                    @if(request()->is('bank/login'))
+                                        <a href="{{ route('login') }}">Login Agent</a>
+                                    @else
+                                        <a href="{{ route('bank.login') }}">Login Banque</a>
+                                    @endif
+                                </span>
+                            </h4>
+
                         </div>
                     </div>
                     {{ $slot }}

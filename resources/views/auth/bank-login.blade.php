@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-form.auth-card :title="__('Se connecter en tant qu\'Admin')">
+    <x-form.auth-card :title="__('Se connecter')">
         @if($errors->any())
             @foreach($errors->all() as $error)
                 <app-toast type="error" message="{{ $error }}"></app-toast>
