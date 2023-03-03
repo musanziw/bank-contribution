@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Agency;
 use App\Models\Bank;
 use App\Models\Client;
+use App\Models\Contribution;
 use App\Models\Role;
 use App\Models\Service;
 use App\Models\Subscription;
@@ -22,7 +23,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Bank::factory(1)->has(Subscription::factory(1))->create();
         Role::upsert([
             ['name' => 'Caissier'], ['name' => 'Collecteur']
         ], ['name']);
@@ -30,7 +30,9 @@ class DatabaseSeeder extends Seeder
             ['name' => 'ChatBot'],
             ['name' => 'Cotisation'],
         ], ['name']);
+        Bank::factory(1)->has(Subscription::factory(1))->create();
         User::factory(12)->has(Client::factory(1))->create();
         Town::factory(10)->has(Agency::factory(2))->create();
+        Contribution::factory(12)->create();
     }
 }
