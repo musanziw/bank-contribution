@@ -11,25 +11,32 @@
                 <div class="nk-block-head-content">
                     <div class="toggle-wrap nk-block-tools-toggle">
                         <div class="toggle-expand-content">
-                            <ul class="justify-between g-3">
-                                <li>
-                                    <x-text-input type="number" wire:model.debounce.500="search"
-                                                  placeholder="Entrer l'id de l'agent"/>
-                                </li>
-                                <li>
-                                    <x-text-input type="text"
-                                                  name="started_at"
-                                                  wire:model="start"
-                                                  placeholder="Date debut"
-                                                  data-provide="datepicker"/>
-                                </li>
-                                <li>
-                                    <x-text-input type="text"
-                                                  placeholder="Date fin"
-                                                  wire:model="end"
-                                                  data-provide="datepicker"/>
-                                </li>
-                            </ul>
+                            <form action="{{ route('contribution.search') }}" method="get">
+                                <ul class="justify-between g-1">
+                                    <li>
+                                        <x-text-input type="text"
+                                                      name="search"
+                                                      placeholder="Entrer le nom de l'agent"/>
+                                    </li>
+                                    <li>
+                                        <x-text-input type="text"
+                                                      name="started_at"
+                                                      placeholder="Date debut"
+                                                      data-provide="datepicker"/>
+                                    </li>
+                                    <li>
+                                        <x-text-input type="text"
+                                                      name="ended_at"
+                                                      placeholder="Date fin"
+                                                      data-provide="datepicker"/>
+                                    </li>
+                                    <li>
+                                        <x-primary-button>
+                                            {{ __('Rechercher') }}
+                                        </x-primary-button>
+                                    </li>
+                                </ul>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -78,7 +85,7 @@
                 {{ $contributions->links() }}
             </div>
         @else
-            <h6>Aucune contribution.</h6>
+            <h6>Aucune cotisation.</h6>
         @endif
     </div>
 </x-cashier-layout>
