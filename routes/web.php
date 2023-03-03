@@ -4,6 +4,7 @@ use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\Bank\BankPassword;
 use App\Http\Controllers\Bank\BankProfile;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Contribution\ContributionController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Town\TownController;
 use App\Http\Controllers\User\ProfileController;
@@ -29,6 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::post('client/create', [ClientController::class, 'store']);
     Route::get('client/{client}', [ClientController::class, 'edit'])->name('client.edit');
     Route::post('client/{client}', [ClientController::class, 'update']);
+
+    // Contributions routes
+    Route::get('contributions', [ContributionController::class, 'index'])->name('contribution.index');
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
