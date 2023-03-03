@@ -4,6 +4,7 @@ use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\Bank\BankPassword;
 use App\Http\Controllers\Bank\BankProfile;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Contribution\BankContributionController;
 use App\Http\Controllers\Contribution\ContributionController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Town\TownController;
@@ -51,6 +52,10 @@ Route::middleware('auth:bank')->group(function () {
     Route::get('bank/town/{town}', [TownController::class, 'edit'])->name('town.edit');
     Route::post('bank/town/{town}', [TownController::class, 'update']);
     Route::delete('bank/town/{town}', [TownController::class, 'destroy'])->name('town.destroy');
+
+    // Bank Contribution routes
+    Route::get('bank/contributions', [BankContributionController::class, 'index'])->name('bank.contribution.index');
+    Route::get('bank/contributions/search', [BankContributionController::class, 'search'])->name('bank.contribution.search');
 
     // Agency routes
     Route::get('bank/agencies', [AgencyController::class, 'index'])->name('agency.index');
